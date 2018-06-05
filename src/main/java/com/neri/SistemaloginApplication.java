@@ -31,9 +31,9 @@ public class SistemaloginApplication {
 	}
 
 	private void initUsers(UserRepository userRepository, PasswordEncoder passwordEncoder) {
-		User admin = new User();
+		//User USER = new User();
 
-		User RUSH = new User()
+		User USER = new User()
 				.setId(UUID.randomUUID().toString().toUpperCase())
 				.setEmail("rodrigo@intelipost.com")
 				.setPassword(passwordEncoder.encode("admin"))
@@ -46,7 +46,7 @@ public class SistemaloginApplication {
 
 		User find = userRepository.findByEmail("rodrigo@rodrigo.com");
 		if (find == null) {
-			userRepository.save(RUSH);
+			userRepository.save(USER);
 		}
 	}
 
