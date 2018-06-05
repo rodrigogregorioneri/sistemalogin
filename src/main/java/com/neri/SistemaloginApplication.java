@@ -32,14 +32,21 @@ public class SistemaloginApplication {
 
 	private void initUsers(UserRepository userRepository, PasswordEncoder passwordEncoder) {
 		User admin = new User();
-		admin.setId(UUID.randomUUID().toString().toUpperCase());
-		admin.setEmail("rodrigo@rodrigo.com");
-		admin.setPassword(passwordEncoder.encode("admin"));
-		admin.setProfile(ProfileEnum.ROLE_ADMIN);
+
+		User RUSH = new User()
+				.setId(UUID.randomUUID().toString().toUpperCase())
+				.setEmail("rodrigo@intelipost.com")
+				.setPassword(passwordEncoder.encode("admin"))
+				.setProfile(ProfileEnum.ROLE_ADMIN);
+
+//		admin.setId(UUID.randomUUID().toString().toUpperCase());
+//		admin.setEmail("rodrigo@intelipost.com");
+//		admin.setPassword(passwordEncoder.encode("admin"));
+//		admin.setProfile(ProfileEnum.ROLE_ADMIN);
 
 		User find = userRepository.findByEmail("rodrigo@rodrigo.com");
 		if (find == null) {
-			userRepository.save(admin);
+			userRepository.save(RUSH);
 		}
 	}
 
