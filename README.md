@@ -47,6 +47,20 @@ URI: http://localhost:8080/users
 Metodo: GET
 Content-type: application-json
 
+URI: http://localhost:8080/createUser
+Metodo: POST
+Content-type: application-json
+Body:
+{
+"email":"teste2@teste.com",
+"name":"teste2",
+"password":"teste2",
+"profile":1
+}
+
+
+
+
 
 caso o servidor tenha problema com a porta basta mudar no arquivo application.properties o atributo server.port o padrão está a porta 8080
 
