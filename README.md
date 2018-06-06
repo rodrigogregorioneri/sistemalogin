@@ -11,6 +11,12 @@ Após fazer isso abra o projeto no IntelliJ ou no STS
 
 no intellij provavelmente irá reconhecer que o projeto é Maven no Eclipse STS provavelmente terá que converter o projeto para Maven e baixar as dependencias
 
+configurar as credenciais do banco no application.properties
+
+spring.datasource.url=jdbc:mysql://localhost:3306/sistemalogin
+spring.datasource.username=root
+spring.datasource.password=familiamenores0
+
 execute o projeto pois ele estará configurado para criar a tabela e inserir um usuario valido na tabela
 
 As credenciais criadas são:
