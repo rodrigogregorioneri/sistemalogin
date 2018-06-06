@@ -6,13 +6,14 @@ import javax.validation.constraints.NotNull;
 import com.neri.security.enums.ProfileEnum;
 import lombok.*;
 import javax.persistence.Id;
+import java.util.UUID;
 
 
 @Data
 @Entity
 public class User {
 
-	private @Id String id;
+	private @Id String id = UUID.randomUUID().toString().toUpperCase();
 	private  String email;
 	private  String name;
 	private  String password;

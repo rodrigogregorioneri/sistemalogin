@@ -2,6 +2,7 @@ package com.neri.security.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.neri.security.service.JwtUserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -33,7 +34,7 @@ public class AuthenticationRestController  {
     private JwtTokenUtil jwtTokenUtil;
 
     @Autowired
-    private UserDetailsService userDetailsService;
+    private JwtUserDetailsServiceImpl userDetailsService;
 
     @Autowired
     private UserService userService;
@@ -68,5 +69,6 @@ public class AuthenticationRestController  {
             return ResponseEntity.badRequest().body(null);
         }
     }
+
 
 }

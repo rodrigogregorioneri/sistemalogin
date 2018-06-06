@@ -40,7 +40,7 @@ public class SistemaloginApplication {
 		user.setPassword(passwordEncoder.encode("admin"));
 		user.setProfile(ProfileEnum.ROLE_ADMIN);
 
-		User find = userRepository.findByEmail("rodrigo@rodrigo.com");
+		User find = userRepository.findByEmail("rodrigo@intelipost.com");
 		if (find == null) {
 			userRepository.save(user);
 		}
