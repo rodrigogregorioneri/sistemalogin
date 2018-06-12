@@ -11,6 +11,12 @@ Após fazer isso abra o projeto no IntelliJ ou no STS
 
 no intellij provavelmente irá reconhecer que o projeto é Maven no Eclipse STS provavelmente terá que converter o projeto para Maven e baixar as dependencias
 
+configurar as credenciais do banco no application.properties
+
+spring.datasource.url=jdbc:mysql://localhost:3306/sistemalogin
+spring.datasource.username=root
+spring.datasource.password=familiamenores0
+
 execute o projeto pois ele estará configurado para criar a tabela e inserir um usuario valido na tabela
 
 As credenciais criadas são:
@@ -46,6 +52,20 @@ Content-type: application-json
 URI: http://localhost:8080/users
 Metodo: GET
 Content-type: application-json
+
+URI: http://localhost:8080/createUser
+Metodo: POST
+Content-type: application-json
+Body:
+{
+"email":"teste2@teste.com",
+"name":"teste2",
+"password":"teste2",
+"profile":1
+}
+
+
+
 
 
 caso o servidor tenha problema com a porta basta mudar no arquivo application.properties o atributo server.port o padrão está a porta 8080
