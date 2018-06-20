@@ -1,24 +1,16 @@
-package com.neri.entities;
+package com.neri.model;
 
-import com.neri.model.FilmModel;
+import com.neri.entities.Genero;
 
-import javax.persistence.*;
 import java.time.LocalDateTime;
-
 import java.util.List;
 import java.util.UUID;
 
-
 /**
- * Created by NeriDev on 06/06/2018.
+ * Created by NeriDev on 18/06/2018.
  */
-
-
-@Entity
-public class Film {
-
-    @Id
-    private String id = UUID.randomUUID().toString().toUpperCase();
+public class FilmModel {
+    private String id;
 
     private String nameBR;
 
@@ -28,26 +20,19 @@ public class Film {
 
     private String synopsis;
 
-    @ManyToOne
     private Genero genero;
 
-    public Film() {
+
+
+    public FilmModel() {
     }
 
-    public Film(String id, String nameBR, String nameEN, LocalDateTime year, String synopsis) {
+    public FilmModel(String id, String nameBR, String nameEN, LocalDateTime year, String synopsis) {
         this.id = id;
         this.nameBR = nameBR;
         this.nameEN = nameEN;
         this.year = year;
         this.synopsis = synopsis;
-    }
-
-    public Genero getGenero() {
-        return genero;
-    }
-
-    public void setGenero(Genero genero) {
-        this.genero = genero;
     }
 
     public String getId() {
@@ -56,6 +41,14 @@ public class Film {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public Genero getGenero() {
+        return genero;
+    }
+
+    public void setGenero(Genero genero) {
+        this.genero = genero;
     }
 
     public String getNameBR() {
@@ -90,14 +83,15 @@ public class Film {
         this.synopsis = synopsis;
     }
 
-    public FilmModel toFilmModel() {
-        FilmModel film = new FilmModel();
-        film.setId(this.getId());
-        film.setYear(this.getYear());
-        film.setSynopsis(this.getSynopsis());
-        film.setGenero(this.getGenero());
-        film.setNameBR(this.getNameBR());
-        film.setNameEN(this.getNameEN());
-        return film;
+    @Override
+    public String toString() {
+        return "FilmModel{" +
+                "id='" + id + '\'' +
+                ", nameBR='" + nameBR + '\'' +
+                ", nameEN='" + nameEN + '\'' +
+                ", year=" + year +
+                ", synopsis='" + synopsis + '\'' +
+                '}';
     }
 }
+
